@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertility Treatment Timeline</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fertility Treatment Timeline Generator</h1>
+        
+        <!-- Basic Information Form -->
+        <form id="patientForm">
+            <div class="form-section">
+                <h2>Patient Information</h2>
+                <div class="form-group">
+                    <label for="patientName">Patient Name:</label>
+                    <input type="text" id="patientName" name="patientName">
+                </div>
+                <div class="form-group">
+                    <label for="patientId">ID:*</label>
+                    <input type="text" id="patientId" name="patientId" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber">
+                </div>
+                <div class="form-group">
+                    <label for="lastMenstrualDate">Last Menstrual Date:*</label>
+                    <input type="date" id="lastMenstrualDate" name="lastMenstrualDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="treatmentType">Treatment Type:*</label>
+                    <select id="treatmentType" name="treatmentType" required>
+                        <option value="">Select Treatment</option>
+                        <option value="IVF">IVF</option>
+                        <option value="COS">COS</option>
+                        <option value="ET">ET</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dynamic Treatment Sections -->
+            <div id="ivfSection" class="treatment-section hidden">
+                <h2>IVF Treatment Details</h2>
+                <!-- IVF specific fields will be added here -->
+            </div>
+
+            <div id="cosSection" class="treatment-section hidden">
+                <h2>COS Treatment Details</h2>
+                <!-- COS specific fields will be added here -->
+            </div>
+
+            <div id="etSection" class="treatment-section hidden">
+                <h2>ET Treatment Details</h2>
+                <!-- ET specific fields will be added here -->
+            </div>
+
+            <button type="submit" id="generateTimeline">Generate Timeline</button>
+        </form>
+
+        <!-- Timeline Display Section -->
+        <div id="timelineSection" class="hidden">
+            <div id="timelineDisplay"></div>
+            <div class="action-buttons">
+                <button id="downloadPdf">Download PDF</button>
+                <button id="sendEmail">Send via Email</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/timeline.js"></script>
+    <script src="scripts/pdfGenerator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</body>
+</html> 
